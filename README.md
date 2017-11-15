@@ -1,2 +1,2 @@
-# ashm8206.github.io
+# README.md
 My static Blog hosted on Github
