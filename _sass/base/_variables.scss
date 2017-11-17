@@ -1,5 +1,5 @@
 // Google Fonts
-@import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,700,300|Roboto:400,700,300|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300|Raleway:500,500i|Source+Code+Pro);
+@import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,700,300|Roboto:400,700,300|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300|Raleway:500|Source+Code+Pro);
 
 // Typography
 $base-font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; // $helvetica;
@@ -7,6 +7,7 @@ $heading-font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-se
 
 // Font Sizes
 $base-font-size: $em-base; // 16px
+$font-style:normal;
 
 // Adjust modular scale ratio
 $modular-scale-ratio: $minor-third;

@@ -40,11 +40,11 @@ jekyll-archives:
     category: '/category/:name/'
     tag: '/tag/:name/'
 
-# Disqus comments
-# disqus_shortname: bencentra
+# DISQUS
+disqus_shortname: aishwaryamali
 
 # Google analytics
-# ga_tracking_id: "UA-XXXX-1"
+ga_tracking_id: "UA-109843572-1"
 
 # Category descriptions (for archive pages)
 descriptions:
