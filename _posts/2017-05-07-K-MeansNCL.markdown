@@ -23,7 +23,7 @@ I performed Modified-Kmeans clustering, given sample of AGCT sequences generated
 * Recompute Ф for all k
   Until no change
 
-I inititally designed an the above algorithm in pandas, a grave mistake. I varied the values of the length of the sequences and number of sequences and plotted a number of graphs w.r.t time as the performance matrix.The result was not promising. The newly designed algorithm took the same time as the current system in place.I found out not quite suprisingly that time taken to convergence was directly ∝  to length of sequences and number of clusters. This is pretty much obvious,since there was a loop to measure probability at each position in each sequence and another loop to check likelihood for each cluster.
+I inititally designed an the above algorithm in pandas, a grave mistake. I varied the values of the length of the sequences and number of sequences and plotted a number of graphs w.r.t time as the performance metric.The result was not promising. The newly designed algorithm took the same time as the current system in place.I found out not quite suprisingly that time taken to convergence was directly ∝  to length of sequences and number of clusters. This is pretty much obvious,since there was a loop to measure probability at each position in each sequence and another loop to check likelihood for each cluster.
 
 I think we are slowly beginining to understand why Pandas was such a bad idea **and why NumPy was so good**. But just to be clear here are some reasons why,
 1. Repeated apply function calls make pandas heavy in computation time
