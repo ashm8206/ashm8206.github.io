@@ -33,31 +33,16 @@ Here is my Psuedocode:
 
 {% highlight c %}
 #define d 100 /* len of seq */
-#define k 3   /* */
-#define n      /* */      
-#define psuedo 1  // psuedocount\n   
+#define k 3   /* num of clusters */
+#define n      /* num of Sequences */      
+#define psuedo 1  /* psuedocount */   
 k=3
-MAP(0..1)[n][4d]<--- ACGT[n][d]
-
-Data[n][4d]<---MAP(0..1)[n][4d]
-{% endhighlight %}
-
-
-
-
-
-A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
-I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
-{% highlight c %}
- d =100             //len of seq
- k  = 3  	  // num of clusters
- n = 100                // numofSeq
- psuedo = 1 	 //psuedocount
 MAP(0..1)[n][4d]<--- ACGT[n][d]
 
 Data[n][4d]<---MAP(0..1)[n][4d]
 
 counts[0..k-1][4d]+= psuedo
+
 totalcounts[0..k-1]+= 0
 
 label[n]<--- randomized from 0 to k-1
@@ -109,6 +94,9 @@ updatecounts(counts,totalcounts,label,new_label,Data,i)
 	totalcounts[label[i]] -= 1
 	totalcounts[new_label[i]] += 1
 {% endhighlight %}
+
+A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
+I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
 
 **Let me explain better with the following examples:**
 
