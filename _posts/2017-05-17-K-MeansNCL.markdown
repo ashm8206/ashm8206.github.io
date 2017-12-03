@@ -96,8 +96,17 @@ A data of a certain sample size took 60 seconds with pandas-style implementation
 I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
 {% highlight c %}
 d = 100 /*len of seq*/
-if c!=d:
-	print("yes")
+k=3   /* num of clusters */
+n=100     /* num of Sequences */
+psuedo= 1  /* psuedocount */ 
+
+MAP(0..1)[n][4d]<--- ACGT[n][d]
+
+Data[n][4d]<---MAP(0..1)[n][4d]
+
+counts[0..k-1][4d]+= psuedo
+
+totalcounts[0..k-1]+= 0
 label[n]<--- randomized from 0 to k-1
 
 for i to n:
