@@ -32,10 +32,10 @@ I think we are slowly beginining to understand why Pandas was such a bad idea **
 Here is my Psuedocode:
 
 {% highlight c %}
-#define d 100 //len of seq
-#define k 3   //num of clusters
-#define n            //numofSeq
-#define psuedo 1     //psuedocount
+#define d 100 
+#define k 3   
+#define n            
+#define psuedo 1     
 k=3
 MAP(0..1)[n][4d]<--- ACGT[n][d]
 
