@@ -85,6 +85,11 @@ updatecounts(counts,totalcounts,label,new_label,Data,i):
 	counts[new_label[i]] += Data[i]
 	totalcounts[label[i]] -= 1
 	totalcounts[new_label[i]] += 1
+	
+minimize(likelihood[n * k] , label):
+	for i to n:
+		new_label[i]=maximize_by_index(likelihood[n])
+	return new_label
 
 {% endhighlight %}
 
