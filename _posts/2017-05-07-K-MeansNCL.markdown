@@ -52,9 +52,7 @@ I performed many checks by adding noise linearly to check the algorithm for robu
  k  = 3  	  // num of clusters
  n = 100                // numofSeq
  psuedo = 1 	 //psuedocount
-
 MAP(0..1)[n][4d]<--- ACGT[n][d]
-
 Data[n][4d]<---MAP(0..1)[n][4d]
 
 counts[0..k-1][4d]+= psuedo
