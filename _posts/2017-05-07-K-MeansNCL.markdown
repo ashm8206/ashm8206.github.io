@@ -31,10 +31,10 @@ I think we are slowly beginining to understand why Pandas was such a bad idea **
 3. NumPy array are contiguous blocks of memory so there is almost no indexing
 4. Vectorization in numPy,applies an operation to all elements in an array
 
-Here is my Psuedocode
+Here is my Psuedocode:
 
 
-{% highlight C %}
+{% highlight python %}
 
 #define d  100             //len of seq
 #define k    3  	  // num of clusters
