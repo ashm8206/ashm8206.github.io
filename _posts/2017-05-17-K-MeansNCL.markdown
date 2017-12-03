@@ -48,7 +48,7 @@ totalcounts[0..k-1]+= 0
 label[n]<--- randomized from 0 to k-1
 
 for i to n
-	counts[label[i]]+=Data[i] //initialize_counts
+	counts[label[i]]+=Data[i] //*initialize_counts*//
 
 for i to k
 	totalcounts[i]+= sum(counts[i][0:4])
