@@ -67,14 +67,14 @@ while True:
         if(flag==0)
 		break
 	
-loglikelihood(counts,totalcounts):
+loglikelihood(counts,totalcounts): /* take log,to prevent overflowing */
 	for i to k:
 		total = totalcounts[i]
 		for j to 4d
 			Phi[i][j] = log10(counts[i][j]/total)
-	return Phi /* take log,to prevent overflowing */
+	return Phi 
 
-minimize(likelihood[n*k],label):
+minimize(likelihood[n * k],label):
 	for i to n
 		new_label[i]=maximize_by_index(likelihood[n])
 	return new_label 
@@ -86,11 +86,6 @@ updatecounts(counts,totalcounts,label,new_label,Data,i):
 	totalcounts[label[i]] -= 1
 	totalcounts[new_label[i]] += 1
 	
-minimize(likelihood[n * k] , label):
-	for i to n:
-		new_label[i]=maximize_by_index(likelihood[n])
-	return new_label
-
 {% endhighlight %}
 
 
