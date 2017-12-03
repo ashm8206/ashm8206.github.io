@@ -97,6 +97,36 @@ I performed many checks by adding noise linearly to check the algorithm for robu
 {% highlight python %}
 if c!=d:
 	print("yes")
+label[n]<--- randomized from 0 to k-1
+
+for i to n:
+	counts[label[i]]+=Data[i] /* initialize */
+
+for i to k:
+	totalcounts[i]+= sum(counts[i][0:4])
+
+Phi[0..k-1][4d]<--- loglikelihood(counts[0..k-1][4d],totalcounts[0..k-1]) 
+
+while True:
+	likelihood[n][k]<----Phi[0..k-1][4d] * Data[n][4d]
+        new_label[n]<---maximize(likelihood[n][k])
+	flag =0
+	for i to n
+		if(label[i]!=new_label[i])
+			flag=1
+			updatecounts(counts,totalcounts,label,new_label,Data,i)
+	label[n]=new_label[n]
+	Phi[0..k-1][4d]<--- loglikelihood(counts[0..k-1][4d],totalcounts)
+        if(flag==0)
+		break
+	
+loglikelihood(counts,totalcounts):
+	for i to k:
+		total = totalcounts[i]
+		for j to 4d
+			Phi[i][j] = log10(counts[i][j]/total)
+	return Phi
+
 {% endhighlight %}
 
 **Let me explain better with the following examples:**
