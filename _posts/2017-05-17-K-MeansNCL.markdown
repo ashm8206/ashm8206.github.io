@@ -94,7 +94,7 @@ updatecounts(counts,totalcounts,label,new_label,Data,i)
 
 A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
 I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
-{% highlight python %}
+{% highlight c %}
 if c!=d:
 	print("yes")
 label[n]<--- randomized from 0 to k-1
