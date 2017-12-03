@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Clustering DNA sequences"
-date:   2017-05-17 08:43:59
+title: Clustering DNA sequences
+date: {}
 author: Aishwarya Mali
-cover: "/assets/K-meansNCL/cover1.jpg"
+cover: /assets/K-meansNCL/cover1.jpg
 categories: datascience
-
+published: true
 ---
 
 After graduating from Pune Institute of Computer Technology with a placement at a reputed software firm,I decided to pursue my inclination towards datascience.I completed an online course on datascience from Dataquest.io, and then took the
@@ -107,7 +107,6 @@ updatecounts(counts,totalcounts,label,new_label,Data,i)
 	totalcounts[label[i]] -= 1
 	totalcounts[new_label[i]] += 1
 
-
 {% endhighlight %}
 
 **Let me explain better with the following examples:**
@@ -119,5 +118,3 @@ the figure on the left is data generated that is randomized and the figure on th
 I calculated the validity of the results by using the ARI(Adjusted Rand Index) from **sklearn** that compares the labels pre and post K-Means clustering. A perfect score is **1**. I previously remarked on an algorithms breaking point,the metric I used to determine this point was the ARI.
 
 Hope you liked this post. You may message on Disqus if you have any questions :)
-
-
