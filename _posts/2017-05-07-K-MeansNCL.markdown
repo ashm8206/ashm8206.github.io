@@ -8,7 +8,7 @@ categories: datascience
 
 ---
 
-After graduating from Pune Institute of Computer Technology with a placement at a reputed software firm,I decided to pursue my inclination towards datascience.I completed an online course on Data-science from Dataquest.io, and then took the
+After graduating from Pune Institute of Computer Technology with a placement at a reputed software firm,I decided to pursue my inclination towards datascience.I completed an online course on datascience from Dataquest.io, and then took the
 internship at NCL where I worked as a project intern at National Chemical
 Laboratory (NCL) with Dr. Leelavati Narlikar.
 
@@ -17,9 +17,9 @@ This blog post is a snapshot of all the duties I carried out there.
 I performed Modified-Kmeans clustering, given sample of AGCT sequences generated from dirichlet distribution.
 **The algorithm was as follows,**
 * Arbitarily partition data into k clusters, calculate Фk for all k where 
-   Фk = log(<sub>i=1</sub>∏<sup>n</sup> P(Xi |Zi=1)))
+   Фk = log(<sub>i=1</sub>∏<sup>n</sup> P(Xi |Z))) where Xi is probability value at each position in every sequence given Z viz probability of w.r.t each cluster
 * Repeat
-  * (re)assign each object to the cluster to which it is most similar based on Фk  calculate w.r.t to each k . Assign to   cluster n if the value the maximizes on Фn
+  * (re)assign each object to the cluster to which it is most similar based on Фk  calculate w.r.t to each k . Assign to   cluster m if the value the maximizes on Фm
 * Recompute Ф for all k
   Until no change
 
@@ -28,8 +28,8 @@ I inititally designed an the above algorithm in pandas, a grave mistake. I varie
 I think we are slowly beginining to understand why Pandas was such a bad idea **and why NumPy was so good**. But just to be clear here are some reasons why,
 1. Repeated apply function calls make pandas heavy in computation time
 2. Indexing operation of pandas,aligns series on their indexes on every function call
-3. Numpy array are contiguous blocks of memory so there is almost no indexing
-4. Vectorization in numpy,applies an operation to all elements in an array
+3. NumPy array are contiguous blocks of memory so there is almost no indexing
+4. Vectorization in numPy,applies an operation to all elements in an array
 
 Here is my Psuedocode
 {% highlight C %}
@@ -101,15 +101,15 @@ updatecounts(counts,totalcounts,label,new_label,Data,i)
 {%endhighlight%}
 
 A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
-I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressive and got good results even as the data got progresively noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
+I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
 
 **Let me explain better with the following examples:**
 
 <img src = "/assets/K-meansNCL/results1.png">
 
 The colored lines visible above are noise added by me explictly they are color coded for A-C-G-T.
-the figure on the left is data generated that is randomized and the figure on the right is contains clusters generated after the algorithm was finished running.
-I calculated the validity of the results by using the ARI(Adjusted Rand Index) from **sklearn** that compares the labels pre and post K-Means clustering. A perfect score is **1**. I previously remarked on an algorithms breaking point,the metric I used there was the ARI.
+the figure on the left is data generated that is randomized and the figure on the right is contains clusters generated after the algorithm was finished running.The plots are made using ggplot from R.
+I calculated the validity of the results by using the ARI(Adjusted Rand Index) from **sklearn** that compares the labels pre and post K-Means clustering. A perfect score is **1**. I previously remarked on an algorithms breaking point,the metric I used to determine this point was the ARI.
 
 Hope you liked this post. You may message on Disqus if you have any questions :)
 
