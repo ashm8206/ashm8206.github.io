@@ -98,7 +98,7 @@ updatecounts(counts,totalcounts,label,new_label,Data,i)
 	counts[new_label[i]] += Data[i]
 	totalcounts[label[i]] -= 1
 	totalcounts[new_label[i]] += 1
-{%endhighlight%}
+{% endhighlight %}
 
 A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
 I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
@@ -108,7 +108,7 @@ I performed many checks by adding noise linearly to check the algorithm for robu
 <img src = "/assets/K-meansNCL/results1.png">
 
 The colored lines visible above are noise added by me explictly they are color coded for A-C-G-T.
-the figure on the left is data generated that is randomized and the figure on the right is contains clusters generated after the algorithm was finished running.The plots are made using ggplot from R.
+the figure on the left is data generated that is randomized and the figure on the right is contains clusters generated after the algorithm was finished running.The plots are made using **ggplot from R.**
 I calculated the validity of the results by using the ARI(Adjusted Rand Index) from **sklearn** that compares the labels pre and post K-Means clustering. A perfect score is **1**. I previously remarked on an algorithms breaking point,the metric I used to determine this point was the ARI.
 
 Hope you liked this post. You may message on Disqus if you have any questions :)
