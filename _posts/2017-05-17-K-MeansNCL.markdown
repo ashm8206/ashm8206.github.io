@@ -31,7 +31,7 @@ I think we are slowly beginining to understand why Pandas was such a bad idea **
 
 Here is my Psuedocode:
 
-{% highlight c %}
+{% highlight C %}
 #define d 100 /* len of seq */
 #define k 3   /* num of clusters */
 #define n      /* num of Sequences */      
@@ -68,9 +68,6 @@ while True:
         if(flag==0)
 		break
 	
-        
-
-
 loglikelihood(counts,totalcounts):
 	for i to k
 		total = totalcounts[i]
