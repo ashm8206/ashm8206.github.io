@@ -34,7 +34,7 @@ I think we are slowly beginining to understand why Pandas was such a bad idea **
 Here is my Psuedocode:
 
 
-{% highlight python %}
+{% highlight c %}
 
 #define d  100             //len of seq
 #define k    3  	  // num of clusters
@@ -97,6 +97,28 @@ updatecounts(counts,totalcounts,label,new_label,Data,i)
 	totalcounts[label[i]] -= 1
 	totalcounts[new_label[i]] += 1
 
+{% endhighlight %}
+
+{% highlight html %}
+{% raw %}{% highlight javascript %}
+function demo(string, times) { 
+  for (var i = 0; i < times; i++) { 
+    console.log(string); 
+  } 
+} 
+demo("hello, world!", 10);
+{% endhighlight %}{% endraw %}
+{% endhighlight %}
+
+...will come out looking like this:
+
+{% highlight javascript %}
+function demo(string, times) {
+  for (var i = 0; i < times; i++) {
+    console.log(string);
+  }
+}
+demo("hello, world!", 10);
 {% endhighlight %}
 
 A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
