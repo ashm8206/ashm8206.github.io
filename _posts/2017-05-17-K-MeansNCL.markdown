@@ -1,11 +1,10 @@
 ---
 layout: post
 title: Clustering DNA sequences
-date: {}
+date: 2017-05-17 08:43:59
 author: Aishwarya Mali
 cover: /assets/K-meansNCL/cover1.jpg
 categories: datascience
-published: true
 ---
 
 After graduating from Pune Institute of Computer Technology with a placement at a reputed software firm,I decided to pursue my inclination towards datascience.I completed an online course on datascience from Dataquest.io, and then took the
@@ -32,7 +31,7 @@ I think we are slowly beginining to understand why Pandas was such a bad idea **
 
 Here is my Psuedocode:
 
-{% highlight c %}
+{% highlight python %}
 d=100
 k=3
 {% endhighlight %}
@@ -47,6 +46,10 @@ function demo(string, times) {
 }
 demo("hello, world!", 10);
 {% endhighlight %}
+{% highlight python %}
+ d=100
+ k=3
+ {% endhighlight %}
 A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
 I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
 {% highlight C %}
