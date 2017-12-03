@@ -24,7 +24,6 @@ I performed Modified-Kmeans clustering, given sample of AGCT sequences generated
   Until no change
 
 I inititally designed an the above algorithm in pandas, a grave mistake. I varied the values of the length of the sequences and number of sequences and plotted a number of graphs w.r.t time as the performance metric.The result was not promising. The newly designed algorithm took the same time as the current system in place.I found out not quite suprisingly that time taken to convergence was directly ∝  to length of sequences and number of clusters. This is pretty much obvious,since there was a loop to measure probability at each position in each sequence and another loop to check likelihood for each cluster.
-
 I think we are slowly beginining to understand why Pandas was such a bad idea **and why NumPy was so good**. But just to be clear here are some reasons why,
 1. Repeated apply function calls make pandas heavy in computation time
 2. Indexing operation of pandas,aligns series on their indexes on every function call
@@ -34,6 +33,19 @@ I think we are slowly beginining to understand why Pandas was such a bad idea **
 Here is my Psuedocode:
 
 
+
+
+
+{% highlight c %}
+function demo(string, times) {
+  for (var i = 0; i < times; i++) {
+    console.log(string);
+  }
+}
+demo("hello, world!", 10);
+{% endhighlight %}
+A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
+I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
 {% highlight c %}
 
 #define d  100             //len of seq
@@ -97,32 +109,8 @@ updatecounts(counts,totalcounts,label,new_label,Data,i)
 	totalcounts[label[i]] -= 1
 	totalcounts[new_label[i]] += 1
 
+
 {% endhighlight %}
-
-{% highlight html %}
-{% raw %}{% highlight javascript %}
-function demo(string, times) { 
-  for (var i = 0; i < times; i++) { 
-    console.log(string); 
-  } 
-} 
-demo("hello, world!", 10);
-{% endhighlight %}{% endraw %}
-{% endhighlight %}
-
-...will come out looking like this:
-
-{% highlight javascript %}
-function demo(string, times) {
-  for (var i = 0; i < times; i++) {
-    console.log(string);
-  }
-}
-demo("hello, world!", 10);
-{% endhighlight %}
-
-A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
-I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
 
 **Let me explain better with the following examples:**
 
