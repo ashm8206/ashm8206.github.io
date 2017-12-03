@@ -32,69 +32,6 @@ I think we are slowly beginining to understand why Pandas was such a bad idea **
 Here is my Psuedocode:
 
 {% highlight c %}
-#define d 100 /* len of seq */
-#define k 3   /* num of clusters */
-#define n      /* num of Sequences */      
-#define psuedo 1  /* psuedocount */   
-k=3
-MAP(0..1)[n][4d]<--- ACGT[n][d]
-
-Data[n][4d]<---MAP(0..1)[n][4d]
-
-counts[0..k-1][4d]+= psuedo
-
-totalcounts[0..k-1]+= 0
-
-label[n]<--- randomized from 0 to k-1
-
-for i to n
-	counts[label[i]]+=Data[i] /* initialize */
-
-for i to k
-	totalcounts[i]+= sum(counts[i][0:4])
-
-Phi[0..k-1][4d]<--- loglikelihood(counts[0..k-1][4d],totalcounts[0..k-1]) 
-
-while True:
-	likelihood[n][k]<----Phi[0..k-1][4d] * Data[n][4d]
-        new_label[n]<---maximize(likelihood[n][k])
-	flag =0
-	for i to n
-		if(label[i]!=new_label[i])
-			flag=1
-			updatecounts(counts,totalcounts,label,new_label,Data,i)
-	label[n]=new_label[n]
-	Phi[0..k-1][4d]<--- loglikelihood(counts[0..k-1][4d],totalcounts)
-        if(flag==0)
-		break
-	
-loglikelihood(counts,totalcounts):
-	for i to k
-		total = totalcounts[i]
-		for j to 4d
-			Phi[i][j] = log10(counts[i][j]/total)
-	return Phi
-
-
-
-minimize(likelihood[n*k],label):
-	for i to n
-		new_label[i]=maximize_by_index(likelihood[n])
-	return new_label
-
-
-
-
-updatecounts(counts,totalcounts,label,new_label,Data,i)
-	counts[label[i]] -= Data[i]
-	counts[new_label[i]] += Data[i]
-	totalcounts[label[i]] -= 1
-	totalcounts[new_label[i]] += 1
-{% endhighlight %}
-
-A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
-I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
-{% highlight c %}
 d = 100 /*len of seq*/
 k=3   /* num of clusters */
 n=100     /* num of Sequences */
@@ -107,7 +44,7 @@ Data[n][4d]<---MAP(0..1)[n][4d]
 counts[0..k-1][4d]+= psuedo
 
 totalcounts[0..k-1]+= 0
-label[n]<--- randomized from 0 to k-1 /* initialize */
+label[n]<--- randomized from 0 to k-1 /* randomly assign labels */
 
 for i to n:
 	counts[label[i]]+=Data[i] /* initialize */
@@ -137,7 +74,24 @@ loglikelihood(counts,totalcounts):
 			Phi[i][j] = log10(counts[i][j]/total)
 	return Phi
 
+minimize(likelihood[n*k],label):
+	for i to n
+		new_label[i]=maximize_by_index(likelihood[n])
+	return new_label
+
+
+updatecounts(counts,totalcounts,label,new_label,Data,i)
+	counts[label[i]] -= Data[i]
+	counts[new_label[i]] += Data[i]
+	totalcounts[label[i]] -= 1
+	totalcounts[new_label[i]] += 1
+
 {% endhighlight %}
+
+
+
+A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
+I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
 
 **Let me explain better with the following examples:**
 
