@@ -72,15 +72,15 @@ loglikelihood(counts,totalcounts):
 		total = totalcounts[i]
 		for j to 4d
 			Phi[i][j] = log10(counts[i][j]/total)
-	return Phi
+	return Phi /* take log,to prevent overflowing */
 
 minimize(likelihood[n*k],label):
 	for i to n
 		new_label[i]=maximize_by_index(likelihood[n])
-	return new_label
+	return new_label 
 
 
-updatecounts(counts,totalcounts,label,new_label,Data,i)
+updatecounts(counts,totalcounts,label,new_label,Data,i):
 	counts[label[i]] -= Data[i]
 	counts[new_label[i]] += Data[i]
 	totalcounts[label[i]] -= 1
