@@ -32,25 +32,20 @@ I think we are slowly beginining to understand why Pandas was such a bad idea **
 Here is my Psuedocode:
 
 {% highlight c %}
-#define d 100
+#define d 100 //len of seq
+#define k 3   //num of clusters
+#define n            //numofSeq
+#define psuedo 1     //psuedocount
 k=3
 MAP(0..1)[n][4d]<--- ACGT[n][d]
+
+Data[n][4d]<---MAP(0..1)[n][4d]
 {% endhighlight %}
 
 
 
-{% highlight c %}
-function demo(string, times) {
-  for (var i = 0; i < times; i++) {
-    console.log(string);
-  }
-}
-demo("hello, world!", 10);
-{% endhighlight %}
-{% highlight python %}
- d=100
- k=3
- {% endhighlight %}
+
+
 A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
 I performed many checks by adding noise linearly to check the algorithm for robustness, I varied alpha in the dirichlets distribution progressively and got good results even as the data got increasingly noisy. I also added noise in columns by varrying the set of important features to find a breaking point for the algorithm.The algorithm starts breaking when there are only 30% meaningful columns.
 {% highlight c %}
