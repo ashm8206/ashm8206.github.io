@@ -31,9 +31,10 @@ I think we are slowly beginining to understand why Pandas was such a bad idea **
 
 Here is my Psuedocode:
 
-{% highlight python %}
-d=100
+{% highlight c %}
+#define d 100
 k=3
+MAP(0..1)[n][4d]<--- ACGT[n][d]
 {% endhighlight %}
 
 
