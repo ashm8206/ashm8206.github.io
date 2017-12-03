@@ -107,7 +107,7 @@ Data[n][4d]<---MAP(0..1)[n][4d]
 counts[0..k-1][4d]+= psuedo
 
 totalcounts[0..k-1]+= 0
-label[n]<--- randomized from 0 to k-1
+label[n]<--- randomized from 0 to k-1 /* initialize */
 
 for i to n:
 	counts[label[i]]+=Data[i] /* initialize */
