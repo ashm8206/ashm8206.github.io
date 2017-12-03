@@ -32,7 +32,10 @@ I think we are slowly beginining to understand why Pandas was such a bad idea **
 
 Here is my Psuedocode:
 
-
+{% highlight c %}
+d=100
+k=3
+{% endhighlight %}
 
 
 
