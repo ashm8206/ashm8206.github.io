@@ -59,18 +59,14 @@ for i to k
 Phi[0..k-1][4d]<--- loglikelihood(counts[0..k-1][4d],totalcounts[0..k-1]) 
 
 while True:
-
 	likelihood[n][k]<----Phi[0..k-1][4d] * Data[n][4d]
-
-	new_label[n]<---maximize(likelihood[n][k])
+        new_label[n]<---maximize(likelihood[n][k])
 	flag =0
 	for i to n
 		if(label[i]!=new_label[i])
 			flag=1
-			updatecounts(counts,totalcounts,label,new_label,Data,i
-	
+			updatecounts(counts,totalcounts,label,new_label,Data,i)
 	label[n]=new_label[n]
-	
 	Phi[0..k-1][4d]<--- loglikelihood(counts[0..k-1][4d],totalcounts)
         if(flag==0)
 		break
@@ -78,7 +74,7 @@ while True:
         
 
 
-loglikelihood(counts,totalcounts)
+loglikelihood(counts,totalcounts):
 	for i to k
 		total = totalcounts[i]
 		for j to 4d
@@ -87,7 +83,7 @@ loglikelihood(counts,totalcounts)
 
 
 
-minimize(likelihood[n*k],label)
+minimize(likelihood[n*k],label):
 	for i to n
 		new_label[i]=maximize_by_index(likelihood[n])
 	return new_label
@@ -100,6 +96,7 @@ updatecounts(counts,totalcounts,label,new_label,Data,i)
 	counts[new_label[i]] += Data[i]
 	totalcounts[label[i]] -= 1
 	totalcounts[new_label[i]] += 1
+
 {% endhighlight %}
 
 A data of a certain sample size took 60 seconds with pandas-style implementation now took 20 microseconds.
