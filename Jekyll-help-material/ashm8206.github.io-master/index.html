@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Aishwarya Mali</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/main.css">
+	</head>
+	<body>
+		<nav>
+    		<ul>
+        		<li><a href="/">Home</a></li>
+	        	<li><a href="/about.html">About</a></li>
+        		<li><a href="CV.pdf">CV</a></li>
+        		<li><a href="https://github.com/ashm8206">Github</a></li>
+        		
+    		</ul>
+		</nav>
+		<div class="container">
+    		<div class="blurb">
+        		<h1>Hi there, I'm Aishwarya Mali!</h1>
+				<p>I'm a aspiring datascientist. I wanted to get some hands-on knowledge of  datascience so I decided to take an online course at <a href ="https://www.dataquest.io/">dataquest</a>. As a subscriber of  dataquest one must write correct code in order to move on to next level of the course. Here are some projects that I have made.</p>
+				<h4 style="color:blue;">Note : All projects contain advanced steps that are not covered/expected in Dataquest coursework, and not all projects are part of the coursework, some are the product of genuine curiosity!</h4>
+					<h2>Analyzing NYC High School Data using Folium</h2>
+					<p>Data was compiled from various resources such as <a href ="https://data.cityofnewyork.us/Education/SAT-Results/f9bf-2cp4">here</a> and <a href ="https://data.cityofnewyork.us/Education/DOE-High-School-Directory-2014-2015/n3p6-zve2"> here </a> There are several related datasets on the same website that cover demographic information and test scores. Here are the names of all we will be using, we can search using following names:</p>
+                                        <h3><ul>
+                                        <li>SAT scores by school</li>
+                                        <li>School attendance</li>
+                                        <li>Class size</li>
+                                        <li>AP test results</li>
+                                        <li>Demographics</li>
+                                        <li>School survey</li>
+                                        </ul></h3>
+                                        <p>We combined relevant data into one dataframe and then found that SAT Scores are Higher where english learners are lower in percentage.</p>
+                                        <img src = "/images/sat.png">
+                                                <p>The above map is of SAT Scores as per district </p>
+                                        <img src = "/images/ell.png">
+                                                <p>The above map is of english learners percentage as per district. Clearly they are complements of each other, Staten Island has higher SAT scores and low English learners percentage </p>        
+					<p><a href="/NYC.html">Read more..</a></p>
+					<h2>Clinton-Trump Sentiment Twitter-Analysis</h2>
+					<p>The USA campaigns have been a trending topic for quite some time now. I thought of pulling
+					some stats from twitter text, to gauge for myself some key insights of the campaign. The analysis below was performed immediately after RNC and DNC conventions. Historically there have been spikes in candidate Approval-ratings post Party <a href="http://www.economist.com/blogs/graphicdetail/2016/08/daily-chart-2">Conventions.</a>
+					Performing this analysis post Conventions was key as there was a high chance of plotting interesting patterns now that both party VP tickets were announced. Below are some graphs plotted using Seaborn and Matplotlib. Sentiment Analysis was performed using Textblob Library.</p>
+					
+					<img src = "/images/mean_cltr.png">
+					<img src = "/images/stadard_devi.png">
+						<p>Lets look at Mean first. We can see that almost all comments about Trump are negative since the Mean is closer to zero. Value for each data point can be -1 to 1, where -1 means negative comment, and 1 means positive comment. The closer the Mean is to zero the more negative the comments about the candidate. An interesting point to note is that Trump-Pence ticket choice is appreciated a lot more than Clinton-Kain. Will it come down to the choice of VP between Clinton and Trump? It remains to be seen as the above Mean is just a Random Sample Mean. With the Standard Deviation chart we can see that our data collected is not very dispersed, we will need to collect more data to qualify the Mean chart.<a href="https://github.com/ashm8206/ClintonTrumpPostConventions/blob/master/scraper.py"> Here is my Twitter Scraper Code </a></p>
+					<img src = "/images/year_candi.png">
+						<p>This map is stacked for number of Clinton tweets vs Trump tweets as per twitter account age. It is safe to say that for this sample candidate Donald Trump has maximum number of tweets, from the new twitter account holders and again from older 8 year old account holders.
+						Thus, the 35-49 year olds are likely to tweet about Trump<a href="http://www.pewinternet.org/2009/02/12/twitter-and-status-updating/"> as nearly 20% of all twitter users that joint the site in 2008(8 years back)were aged between 25-34</a>. Also, 18-29 year olds are much more likely to tweet about Trump as is clear 2016 twitter demographics <a href="https://blog.hootsuite.com/top-social-media-sites-matter-to-marketers/">where they make up nearly 37% of the twitter population.</a> </p>
+					<p><a href="https://github.com/ashm8206/ClintonTrumpPostConventions/blob/master/ClintonTrumpPostConventions.ipynb">Read more..</a></p>
+					<h2>Chloropeth Map of Police killings in Usa in year 2015</h2>
+					<p>Police killings have become rampant, we use statistics data collected from official sites, it is already in csv format.Using a ShapeFile downloaded from <a href="https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html">Census.gov</a>.I have plotted a Choloropeth map for Police killing rates as per State using Basemap Library</p>
+					<img src = "/images/chlorpeth.png">
+					<p><a href ="https://github.com/ashm8206/PoliceKillings/blob/master/police_killings.ipynb">Read more..</a></p>
+					<h2> Star Wars Survey Visualization</h2>
+					<p>In this project, I used readily available data from SurveyMonkey and plotted insights using Seaborn and Matplotlib. From the graph below I found that 
+					Hans Solo and Yoda are the most liked characters, Jar Jar binks and Emperor Palpatin are most disliked. Here lower the Mean the better since 1 is most liked 6 is least liked. </p>
+					<img src = "/images/Stars.png">
+					
+					<p><a href ="https://github.com/ashm8206/StarsWarsSurvey/blob/master/StarWarsSurvey.ipynb">Read more..</a></p>
+					<h2>Making Pandas Apply() Parallel</h2>
+					<p>Airplanes Accidents dataset from fivethirtyeight blog required serious cleaning using Pandas. I tried to use Pandas Apply() but the computation was timing-out for a certain operation. So I used Pool function of Multiprocessing module to use my computer architecture better. I used wrapper functions to make Pandas Apply() function parallel. </p>
+					<img src ="/images/code.png">
+					<p><a href = "https://github.com/ashm8206/AirplaneAccidents/blob/master/AiplaneAccidents.ipynb">Read more..</a></p>
+    		</div><!-- /.blurb -->
+		</div><!-- /.container -->
+		<footer>
+    		<ul>
+        		<li><a href="mailto:aishwaryamali94@gmail.com">aishwaryamali94@gmail.com</a></li>
+        		<li><a href="https://github.com/ashm8206">github.com/ashm8206</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>
