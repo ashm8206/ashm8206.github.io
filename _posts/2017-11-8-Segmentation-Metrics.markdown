@@ -86,5 +86,5 @@ Dice coefficient is closely related to F1 score. In the F1 score we need to asse
 
 <img src="/assets/Segmentation-Metric/Sen_spec.gif" alt="Pixel Error" style="width:50%;">
 
-In the image above look at the **Sensitivity and PPV values** they have same numerator but different denominator, so using harmonic mean is appropriate since it takes the reciprocal of the values. We also get **a truer mean unaffected by outliers** by taking Harmonic Meam
+In the image above look at the **Sensitivity and PPV values** they have same numerator but different denominator, so using harmonic mean is appropriate since it takes the reciprocal of the values. We also get **a truer mean unaffected by outliers** by taking Harmonic Mean
 
