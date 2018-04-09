@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Segmentation Metrics
-date: {}
+date: 2017-11-10T08:43:59.000Z
 author: Aishwarya Mali
 cover: /assets/Segmentation-Metric/Segmentation-Metric.png
 categories: Images-Processing
