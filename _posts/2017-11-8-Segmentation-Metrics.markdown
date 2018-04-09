@@ -13,7 +13,7 @@ I was asked to compute average [dice-coeffcient](https://en.wikipedia.org/wiki/S
 
 ## Pixel Error
 
-The simplest way of evaluating a segmentation is by measuring the pixel error between the original labels and the segmented ones. Let l_i denote the value of the boundary labeling L at image location i. The pixel error of L with respect to another binary labeling L* is the number of pixel locations at which the two labelings disagree. This can also be written as the squared [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) \|\| L1 - L* \|\| which is equivalent to the [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) since the labels are binary-valued.
+The simplest way of evaluating a segmentation is by measuring the pixel error between the original labels and the segmented ones. Let li denote the value of the boundary labeling L at image location i. The pixel error of L with respect to another binary labeling L* is the number of pixel locations at which the two labelings disagree. This can also be written as the squared [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) \|\| L1 - L* \|\| which is equivalent to the [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) since the labels are binary-valued.
 
 <img src="/assets/Segmentation-Metric/Pixel-Error.png" alt="Pixel Error" style="width:50%;">
 
@@ -21,13 +21,9 @@ It is **overly sensitive to minor displacements** in the location of a boundary 
 
 ## Warping Error
 
-If L* can be transformed into L by a sequence of pixel flips that each
+If L* can be transformed into L by a sequence of pixel flips that each preserve a set of desired topological properties occur only at locations within a mask M, then we will say L is a warping of L\*, or L <\|  L*. The first condition constrains L and L* to be topologically equivalent. The second condition can be used to constrain L to be geometrically similar to L*. Both conditions will be explained in more detail below.
 
-preserve a set of desired topological properties
-occur only at locations within a mask M,
-then we will say L is a warping of L*, or L <\|  L*. The first condition constrains L and L* to be topologically equivalent. The second condition can be used to constrain L to be geometrically similar to L*. Both conditions will be explained in more detail below.
-
-Now consider the pixel error of T relative to warpings of L*. The warping error between some candidate labeling T and a reference labeling L* is the Hamming distance (or equivalently squared Euclidean distance) between L and the "best warping" of L* onto T:
+Now consider the pixel error of T relative to warpings of L\*. The warping error between some candidate labeling T and a reference labeling L\* is the Hamming distance (or equivalently squared Euclidean distance) between L and the "best warping" of L* onto T:
 
 D(T \|\| L*) =   <sub>min(L <\| L*)</sub> \|\| T-L \|\|<sup>2</sup>  
 
@@ -49,7 +45,7 @@ In short, by definition flipping a simple point is a topology-preserving operati
 
 Rand Error is where things get interesting, turns out it is pretty similiar to the *Dice coefficient* with a minor difference
 
-The Rand index is a well-known measure of the similarity between two data clusterings[1]. Recently, it has been proposed as a measure of segmentation performance, since a segmentation can be regarded as a clustering of pixels[2]. More formally, define a segmentation as an integer-valued labeling of an image. Each object in a segmentation consists of a set of pixels sharing a common label.
+The Rand index is a well-known measure of the similarity between two data clusterings. Recently, it has been proposed as a measure of segmentation performance, since a segmentation can be regarded as a clustering of pixels. More formally, define a segmentation as an integer-valued labeling of an image. Each object in a segmentation consists of a set of pixels sharing a common label.
 
 The Rand index is defined as a measure of agreement:
 
@@ -64,7 +60,7 @@ The Rand index, RI, is:
 <a href="https://www.codecogs.com/eqnedit.php?latex=RI&space;=&space;\frac{a&plus;b}{_{2}^{n}\textrm{C}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?RI&space;=&space;\frac{a&plus;b}{_{2}^{n}\textrm{C}}" title="RI = \frac{a+b}{_{2}^{n}\textrm{C}}" style="width:15%" /></a>
 
 
- where n is the total number of pixels in both the segmentations, where the demoninator is the combinations of choosing any 2 pixels over total number of pixels  **n**.
+ where n is the total number of pixels in both the segmentations, where the denominator is the combination of choosing any 2 pixels over total number of pixels  **n**.Essentially it is, nC<sub>2<sub>
 
 Since the denominator is the total number of pairs, the Rand index represents the frequency of occurrence of agreements over the total pairs, or **the probability that \|X\|and \|Y\| will agree on a randomly chosen pair.**
 
@@ -87,3 +83,6 @@ Dice coefficient is closely related to F1 score. In the F1 score we need to asse
 <img src="/assets/Segmentation-Metric/Sen_spec.gif" alt="Sensitivity_PPV">
 
 In the image above look at the **Sensitivity and PPV values** they have same numerator but different denominator, so using harmonic mean is appropriate since it takes the reciprocal of the values. We also get **a truer mean unaffected by outliers** by taking Harmonic Mean
+
+### References
+[ImageJ](https://imagej.net/Topology_preserving_warping_error)
