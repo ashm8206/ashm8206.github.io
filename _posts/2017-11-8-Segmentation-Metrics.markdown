@@ -84,6 +84,6 @@ Harmonic mean is used in places where a simple arithmatic mean fails. For exampl
 
 Dice coefficient is closely related to F1 score. In the F1 score we need to assess a trade-off between the **Recall(Sensitivity) and Precision**. [On closer study of their formulae](https://en.wikipedia.org/wiki/Sensitivity_and_specificity)
 
-<img src="/assets/Segmentation-Metric/Sen_spec.gif" alt="Pixel Error" style="width:60%;">
+<img src="/assets/Segmentation-Metric/Sen_spec.gif" alt="Sensitivity_PPV">
 
 In the image above look at the **Sensitivity and PPV values** they have same numerator but different denominator, so using harmonic mean is appropriate since it takes the reciprocal of the values. We also get **a truer mean unaffected by outliers** by taking Harmonic Mean
