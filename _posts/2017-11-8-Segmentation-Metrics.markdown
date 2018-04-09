@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  "Segmentation Metrics"
-date:   2017-11-8 08:43:59
+title: Segmentation Metrics
+date: {}
 author: Aishwarya Mali
-cover: "/assets/Segmentation-Metric/Segmentation-Metric.png"
+cover: /assets/Segmentation-Metric/Segmentation-Metric.png
 categories: Images-Processing
+published: true
 ---
 Recently I was given an assignment at work, where I had to generate Segmentation Mask from Ultrasound Images.As I was reading through the articles, I came across this [paper](https://arxiv.org/pdf/1505.04597.pdf)
 
@@ -76,5 +77,9 @@ Since the denominator is the total number of pairs, the Rand index represents th
 
  **It is the harmonic mean between the above two sets.** Here is the [formula](https://en.wikipedia.org/wiki/Harmonic_mean)
 
-*Side notes*
-The Dice coefficient is also the harmonic mean of Sensitivity and Precision, to see why it makes sense, read [Why is the F-Measure a harmonic mean and not an arithmetic mean of the Precision and Recall measures?.](https://stackoverflow.com/questions/26355942/why-is-the-f-measure-a-harmonic-mean-and-not-an-arithmetic-mean-of-the-precision)
+**Side notes**
+- The Dice coefficient is also the harmonic mean of Sensitivity and Precision, to see why it makes sense, read [Why is the F-Measure a harmonic mean and not an arithmetic mean of the Precision and Recall measures?.](https://stackoverflow.com/questions/26355942/why-is-the-f-measure-a-harmonic-mean-and-not-an-arithmetic-mean-of-the-precision)
+
+Harmonic mean is used in places where a simple arithmatic mean fails. For example, if we have a large number of outliers in our data, Harmonic mean is a better fit as it gives a truer value of the central tendency of the population(data points).
+
+Dice coefficient is closely related to F1 score. In the F1 score we need to assess a trade-off between the **Recall(Sensitivity) and Precision**. [On closer study of their formulae](https://en.wikipedia.org/wiki/Sensitivity_and_specificity)
