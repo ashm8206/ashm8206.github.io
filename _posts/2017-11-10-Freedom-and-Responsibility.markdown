@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Freedom and Responsibility"
-date:   2017-11-10 08:43:59
+date:   2017-10-10 08:43:59
 author: Aishwarya Mali
 cover: "/assets/FreeARes/Image.jpeg"
 categories: musings
