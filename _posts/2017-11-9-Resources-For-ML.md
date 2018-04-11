@@ -1,5 +1,10 @@
 ---
 published: false
+layout: post
+date: 2017-11-09T08:43:59.000Z
+author: Aishwarya Mali
+cover: /assets/Segmentation-Metric/Segmentation-Metric.png
+categories: Images-Processing
 ---
 ## Hi brothers mofos
 
