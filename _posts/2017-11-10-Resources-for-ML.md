@@ -5,6 +5,7 @@ layout: post
 author: Aishwarya Mali
 cover: /assets/FreeARes/Image.jpeg
 categories: musings
+title: Resources for ML
 ---
 ## A New Post
 
