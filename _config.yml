@@ -1,198 +1,92 @@
-# External gems
-# See http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html for making `jekyll archives` work.
-gems:
-  - jekyll-archives # Sorry, not GitHub pages friendly!
-  - jekyll-sitemap
-  - jekyll-paginate
+# SITE CONFIGURATION
+baseurl: ""
+url: "http://ashm8206.github.io"
 
-exclude:
-  - "/vendor/"
+# THEME-SPECIFIC CONFIGURATION
+theme_settings:
+  # Meta
+  title: BrightlyDark
+  avatar: assets/img/favicon.png
+  favicon: assets/favicon.ico
+  gravatar: # Email MD5 hash
+  description: "A website with blog posts and pages" # used by search engines
 
-# Site settings
-title: Aishwarya Mali
-subtitle: "Musings on code and life"
-email: aishwaryamali94@gmail.com
-name: Aishwarya Mali
-description: >
-  Musings on code and life
-# Base URL of site (i.e. /blog). It should always start with a slash,
-# and never end with a slash. Set it to a blank value if hosting at the
-# root of your server.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://ashm8206.github.io" # the base hostname & protocol for your site
-cover: "/assets/header_image.jpg"
-logo: "/assets/logo.png"
+  # Header and footer text
+  header_text: > #two or three lines to describe your site
+     <b style="font-family:'Roboto','Helvetica Neue','Helvetica','Arial',sans-serif;font-size: 2.5em;font-weight:500">Aishwarya Mali<br></b><p style="text-align:center;"><i>Musings on Code and Life.</i></p>
+  header_text_feature_image: assets/img/pexels/header_image.jpg
+  footer_text: > 
+   Powered by <a href="https://jekyllrb.com/">Jekyll</a> 
+# with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
-# Build settings
+  # Icons
+  rss: false  # Make sure you created a feed.xml with feed.xml layout
+  email_address: aishwaryamali94@gmail.com
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  gitlab:
+  github: "ashm8206"
+  google_plus:
+  instagram:
+  keybase:
+  linkedin:  https://www.linkedin.com/in/aishwarya-mali-327945a0/
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:  # Full URL
+  steam:
+  tumblr:
+  twitter: brightlydark25
+  vimeo:
+  wordpress:
+  youtube:
+
+  # Scripts / Features
+  google_analytics: "UA-109843572-1"
+  disqus_shortname: aishwaryamali
+  katex: true # Enable if using math markup
+  portfolio: false
+  search: true
+  tags: true
+
+
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: #
+  str_email: "Email"
+  str_next_post: "Next post"
+  str_previous_post: "Previous post"
+  str_next_page: "Next"
+  str_previous_page: "Prev"
+  str_continue_reading: "Continue reading"
+  str_javascript_required_disqus: "Please enable JavaScript to view comments."
+
+  # Colours, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+
+  # Post navigation
+  post_navigation: true
+
+# PAGINATION
+paginate: 5
+paginate_path: "blog/page:num"
+
+# PORTFOLIO
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:name
+
+# BUILD SETTINGS
 markdown: kramdown
-paginate: 4
-paginate_path: "/page:num/"
-inter_post_navigation: false
-highlightjs_theme: "monokai"
-
-# Archive settings (see https://github.com/jekyll/jekyll-archives/)
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layout: 'archive'
-  permalinks:
-    category: '/category/:name/'
-    tag: '/tag/:name/'
-
-# DISQUS
-disqus_shortname: aishwaryamali
-
-# Google analytics
-ga_tracking_id: "UA-109843572-1"
-
-# Category descriptions (for archive pages)
-descriptions:
-  - cat: jekyll
-    desc: "Posts describing Jekyll setup techniques."
-
-  - cat: dummy
-    desc: "Just some placeholder posts, lorem ipsum and the rest."
-
-# Social icons and sharing options
-#
-# Social settings are used in two places:
-# * In the footer, as links to your personal profiles
-# * After each blog post for sharing widgets
-#
-# Example:
-#
-# social:
-#   - name: Twitter                         # Name of the service
-#     icon: twitter                         # Font Awesome icon to use (minus fa- prefix)
-#     username: "@TheBenCentra"             # (User) Name to display in the footer link
-#     url: https://twitter.com/TheBenCentra # URL of your profile (leave blank to not display in footer)
-#     desc: Follow me on Twitter            # Description to display as link title, etc
-#     share: true                           # Include in the "Share" section of posts
-social:
-  - name: Twitter
-    icon: twitter
-    username: brightlydark25
-    url: https://twitter.com/brightlydark25
-    desc: Follow me on Twitter
-    share: true
-
-  - name: Facebook
-    icon: facebook
-    username: aishwaryamali
-    url:
-    desc: Friend me on Facebook
-    share: true
-
-  - name: GitHub
-    icon: github
-    username: ashm8206
-    url: https://github.com/ashm8206
-    desc: Fork me on GitHub
-    share: false
-
-  - name: LinkedIn
-    icon: linkedin
-    username: Aishwarya Mali
-    url: https://www.linkedin.com/in/aishwarya-mali-327945a0/
-    desc: Connect with me on LinkedIn
-    share: true
-
-  - name: Google+
-    icon: google-plus
-    username:
-    url:
-    desc: Add me to your Circles
-    share: true
-
-  - name: YouTube
-    icon: youtube
-    username:
-    url:
-    desc: Subscribe on YouTube
-    share: false
-
-  - name: Instagram
-    icon: instagram
-    username:
-    url:
-    desc: Follow me on Instagram
-    share: false
-
-  - name: Pinterest
-    icon: pinterest
-    username:
-    url:
-    desc: Follow me on Pinterest
-    share: true
-
-  - name: SoundCloud
-    icon: soundcloud
-    username:
-    url:
-    desc: Follow me on SoundCloud
-    share: false
-
-  - name: Tumblr
-    icon: tumblr
-    username:
-    url:
-    desc: Follow me on Tumblr
-    share: false
-
-  - name: Steam
-    icon: steam
-    username:
-    url:
-    desc: Friend me on Steam
-    share: false
-
-  - name: Dribbble
-    icon: dribbble
-    username:
-    url:
-    desc: Follow me on Dribble
-    share: false
-
-  - name: Vimeo
-    icon: vimeo-square
-    username:
-    url:
-    desc: Follow me on Vimeo
-    share: false
-
-  - name: Vine
-    icon: vine
-    username:
-    url:
-    desc: Follow me on Vine
-    share: false
-
-  - name: Reddit
-    icon: reddit
-    username:
-    url:
-    desc: Share to Reddit
-    share: true
-
-  - name: "Hacker News"
-    icon: hacker-news
-    username:
-    url:
-    desc: Share to Hacker News
-    share: false
-
-# Social sharing protocols
-# These are for automatically generating sharing metadata for FB and Twitter
-# OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
-protocols:
-    fb_image: "/assets/logo.png"
-    fb_image_width: 612
-    fb_image_height: 605
-    fb_image_type: "image/png"
-
-    twitter_image: "/assets/logo.png"
-
-    os_repo: "https://github.com/bencentra/centrarium.com"
-    os_rcs_type: "git"
-    os_src: "git@github.com:bencentra/centrarium.com.git"
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: :compressed
+plugins: [jekyll-paginate, jekyll-seo-tag]
+#theme: type-on-strap # Uncomment if using the theme as a jekyll theme gem
+exclude: ["Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", "LICENSE", "README.md", "screenshot.png"]
