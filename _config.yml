@@ -1,6 +1,7 @@
 # SITE CONFIGURATION
 baseurl: ""
 url: "http://ashm8206.github.io"
+title: Aishwarya Mali
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
@@ -15,8 +16,8 @@ theme_settings:
   header_text: > #two or three lines to describe your site
      <b style="font-family:'Roboto','Helvetica Neue','Helvetica','Arial',sans-serif;font-size: 2.5em;font-weight:500">Aishwarya Mali<br></b><p style="text-align:center;"><i>Musings on Code and Life.</i></p>
   header_text_feature_image: assets/img/pexels/header_image.jpg
-  footer_text: > 
-   Powered by <a href="https://jekyllrb.com/">Jekyll</a> 
+  footer_text: >
+   Powered by <a href="https://jekyllrb.com/">Jekyll</a>
 # with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
   # Icons
