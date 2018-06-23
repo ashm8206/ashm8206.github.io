@@ -2,7 +2,7 @@
 layout: post
 title: Resources For Machine Learning
 feature-img: "assets/img/pexels/resources-ml/1.jpg"
-thumbnail: "assets/img/thumbnails/resources-ml/1.jpg"
+thumbnail: "assets/img/pexels/resources-ml/1.jpg"
 tags: [datascience, resources]
 
 ---

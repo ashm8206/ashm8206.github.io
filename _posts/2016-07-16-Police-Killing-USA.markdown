@@ -2,7 +2,7 @@
 layout: post
 title:  "Police Killings-USA 2015"
 feature-img: "assets/img/pexels/Chloropleth-Police-killings/cover1.jpg"
-thumbnail: "assets/img/thumbnails/Chloropleth-Police-killings/cover1.jpg"
+thumbnail: "assets/img/pexels/Chloropleth-Police-killings/cover1.jpg"
 tags: [datascience]
 ---
 

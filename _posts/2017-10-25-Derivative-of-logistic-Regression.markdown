@@ -2,7 +2,7 @@
 layout: post
 title:  Derivative of Logistic regression
 feature-img: "assets/img/pexels/logistic-regression/cover.jpg"
-thumbnail: "assets/img/thumbnails/logistic-regression/cover.jpg"
+thumbnail: "assets/img/pexels/logistic-regression/cover.jpg"
 tags: [calculus]
 
 ---
