@@ -53,8 +53,7 @@ Given two segmentations S1 and S2 of an image I with n pixels, we define:
 
 
 The Rand index, RI, is:
-
-<a href="https://www.codecogs.com/eqnedit.php?latex=RI&space;=&space;\frac{a&plus;b}{_{2}^{n}\textrm{C}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?RI&space;=&space;\frac{a&plus;b}{_{2}^{n}\textrm{C}}" title="RI = \frac{a+b}{_{2}^{n}\textrm{C}}" style="margin-left:25%;width:40%;" /></a>
+ $$ RI = \frac{a+b}{\binom{n}{2}} $$
 
 
  where n is the total number of pixels in both the segmentations, where the denominator is the combination of choosing any 2 pixels over total number of pixels  **n**.Essentially it is, nC<sub>2<sub>
@@ -63,8 +62,7 @@ Since the denominator is the total number of pairs, the Rand index represents th
 
  The dice coefficient is given as:
 
- <a href="https://www.codecogs.com/eqnedit.php?latex={\displaystyle&space;DSC={\frac&space;{2|X\cap&space;Y|}{|X|&plus;|Y|}}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?{\displaystyle&space;DSC={\frac&space;{2|X\cap&space;Y|}{|X|&plus;|Y|}}}" title="{\displaystyle DSC={\frac {2|X\cap Y|}{|X|+|Y|}}}" style="margin-left:18%;width:55%;" /></a>
-
+ $$ DSC = \frac{2\left | X\bigcap Y  \right |}{\left |X  \right |+\left |Y  \right |} $$
 
  where \|X\| and \|Y\| are the cardinalities of the two sets.
 
@@ -82,4 +80,4 @@ Dice coefficient is closely related to F1 score. In the F1 score we need to asse
 In the image above look at the **Sensitivity and PPV values** they have same numerator but different denominator, so using harmonic mean is appropriate since it takes the reciprocal of the values. We also get **a truer mean unaffected by outliers** by taking Harmonic Mean
 
 #### References
-[ImageJ](https://imagej.net/Topology_preserving_warping_error)
+- [ImageJ](https://imagej.net/Topology_preserving_warping_error)
