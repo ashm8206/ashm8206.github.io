@@ -58,13 +58,13 @@ The Rand index, RI, is:
 
  where n is the total number of pixels in both the segmentations, where the denominator is the combination of choosing any 2 pixels over total number of pixels  **n**.Essentially it is, nC<sub>2<sub>
 
-Since the denominator is the total number of pairs, the Rand index represents the frequency of occurrence of agreements over the total pairs, or **the probability that \|X\|and \|Y\| will agree on a randomly chosen pair.**
 
  The dice coefficient is given as:
 
  $$ DSC = \frac{2\left | X\bigcap Y  \right |}{\left |X  \right |+\left |Y  \right |} $$
 
  where \|X\| and \|Y\| are the cardinalities of the two sets.
+ Since the denominator is the total number of pairs, the Rand index represents the frequency of occurrence of agreements over the total pairs, or **the probability that \|X\|and \|Y\| will agree on a randomly chosen pair.**
 
  **It is the harmonic mean between the above two sets.** Here is the [formula](https://en.wikipedia.org/wiki/Harmonic_mean)
 
